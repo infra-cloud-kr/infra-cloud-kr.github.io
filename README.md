@@ -90,7 +90,7 @@ make clean
 
 ## 번역 (i18n)
 
-이 문서는 한국어가 원문이며, Weblate([weblate.printf.kr](https://weblate.printf.kr))를 통해 영어로 번역됩니다.
+이 문서는 한국어가 원문이며, Weblate([translate.openinfra.kr](https://translate.openinfra.kr))를 통해 영어로 번역됩니다.
 
 - 원문 언어: 한국어(`ko`)
 - 번역 언어: 영어(`en`)
@@ -98,7 +98,7 @@ make clean
 
 ### 번역 워크플로우
 
-1. 번역가는 [weblate.printf.kr](https://weblate.printf.kr)에서 문장을 번역합니다.
+1. 번역가는 [translate.openinfra.kr](https://translate.openinfra.kr)에서 문장을 번역합니다.
 2. Weblate가 번역된 `.po` 파일을 Pull Request로 이 저장소에 제출합니다.
 3. PR이 `main`에 머지되면 GitHub Actions가 한국어/영어 사이트를 함께 빌드·배포합니다.
    - 한국어: `https://infra-cloud-kr.github.io/`
