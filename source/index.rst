@@ -14,6 +14,7 @@ OpenInfra(OpenStack)와 Cloud Native(Kubernetes/CNCF) 생태계를 잇는 한국
    :hidden:
 
    translation-guide
+   translation-pipeline
 
 우리의 미션
 ===========

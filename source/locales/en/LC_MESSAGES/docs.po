@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: infra-cloud-kr \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-28 20:35+0900\n"
+"POT-Creation-Date: 2026-06-28 22:02+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -29,97 +29,98 @@ msgid "OpenInfra(OpenStack)와 Cloud Native(Kubernetes/CNCF) 생태계를 잇는
 msgstr ""
 
 #: ../../source/index.rst:11 ../../source/translation-guide.rst:16
+#: ../../source/translation-pipeline.rst:13
 msgid "목차"
 msgstr ""
 
-#: ../../source/index.rst:19
+#: ../../source/index.rst:20
 msgid "우리의 미션"
 msgstr "Our Mission"
 
-#: ../../source/index.rst:21
+#: ../../source/index.rst:22
 msgid ""
 "infra-cloud-kr은 **OpenInfra(OpenStack)** 와 **Cloud "
 "Native(Kubernetes/CNCF)** 두 생태계를 연결하는 한국 커뮤니티입니다."
 msgstr ""
 
-#: ../../source/index.rst:23
+#: ../../source/index.rst:24
 msgid ""
 "클라우드 인프라의 핵심 기술인 OpenStack과 Kubernetes는 서로 보완적인 관계에 있습니다. 우리는 두 생태계의 지식과 "
 "경험을 공유하고, 한국의 클라우드 인프라 기술 발전에 기여합니다."
 msgstr ""
 
-#: ../../source/index.rst:26
+#: ../../source/index.rst:27
 msgid "오픈소스 클라우드 인프라 기술의 한국어 지식 공유"
 msgstr ""
 
-#: ../../source/index.rst:27
+#: ../../source/index.rst:28
 msgid "OpenStack과 Kubernetes 생태계 간의 협업 촉진"
 msgstr ""
 
-#: ../../source/index.rst:28
+#: ../../source/index.rst:29
 msgid "한국 클라우드 엔지니어 커뮤니티 네트워크 구축"
 msgstr ""
 
-#: ../../source/index.rst:31
+#: ../../source/index.rst:32
 msgid "Linux Foundation"
 msgstr ""
 
-#: ../../source/index.rst:33
+#: ../../source/index.rst:34
 msgid ""
 "infra-cloud-kr은 `Linux Foundation <https://www.linuxfoundation.org/>`_ 산하"
 " 프로젝트들과 함께합니다."
 msgstr ""
 
-#: ../../source/index.rst:35
+#: ../../source/index.rst:36
 msgid ""
 "`OpenInfra Foundation <https://openinfra.dev/>`_ 과 `Cloud Native "
 "Computing Foundation (CNCF) <https://www.cncf.io/>`_ 은 모두 Linux "
 "Foundation의 일원으로, 오픈소스 클라우드 기술의 발전을 이끌고 있습니다."
 msgstr ""
 
-#: ../../source/index.rst:39
+#: ../../source/index.rst:40
 msgid "참여 방법"
 msgstr ""
 
-#: ../../source/index.rst:41
+#: ../../source/index.rst:42
 msgid "infra-cloud-kr 커뮤니티에 참여하는 방법을 안내합니다."
 msgstr ""
 
-#: ../../source/index.rst:44
+#: ../../source/index.rst:45
 msgid "GitHub"
 msgstr ""
 
-#: ../../source/index.rst:46
+#: ../../source/index.rst:47
 msgid ""
 "`infra-cloud-kr GitHub 조직 <https://github.com/infra-cloud-kr>`_ 에서 프로젝트에 "
 "기여할 수 있습니다."
 msgstr ""
 
-#: ../../source/index.rst:47
+#: ../../source/index.rst:48
 msgid "이슈를 등록하거나 Pull Request를 보내 주세요."
 msgstr ""
 
-#: ../../source/index.rst:50
+#: ../../source/index.rst:51
 msgid "소셜 미디어"
 msgstr ""
 
-#: ../../source/index.rst:52
+#: ../../source/index.rst:53
 msgid "커뮤니티 소식과 이벤트 정보를 공유합니다."
 msgstr ""
 
-#: ../../source/index.rst:53
+#: ../../source/index.rst:54
 msgid "관심 있는 분들의 참여를 환영합니다."
 msgstr ""
 
-#: ../../source/index.rst:56
+#: ../../source/index.rst:57
 msgid "라이선스"
 msgstr ""
 
-#: ../../source/index.rst:58
+#: ../../source/index.rst:59
 msgid "이 프로젝트는 오픈소스 라이선스 하에 공개되어 있습니다. 자세한 내용은 저장소의 LICENSE 파일을 참고하세요."
 msgstr ""
 
-#: ../../source/index.rst:61
+#: ../../source/index.rst:62
 msgid "© infra-cloud-kr community"
 msgstr ""
 
@@ -502,5 +503,325 @@ msgstr ""
 msgid ""
 "Weblate 사용법은 공식 문서도 참고할 수 있습니다: `Translating using Weblate "
 "<https://docs.weblate.org/en/latest/user/translating.html>`_"
+msgstr ""
+
+#: ../../source/translation-pipeline.rst:5
+msgid "번역 파이프라인 동작 원리 (GitHub ↔ Weblate)"
+msgstr ""
+
+#: ../../source/translation-pipeline.rst:7
+msgid ""
+"이 문서는 infra-cloud-kr 문서가 **어떻게 자동으로 번역·동기화되는지** 그 구조를 설명합니다. 실제 번역 방법은 "
+":ref:`translation-guide` 를, 여기서는 **시스템이 어떻게 맞물려 돌아가는지**\\를 학습합니다. "
+"(멘토·메인테이너, 그리고 i18n 인프라가 궁금한 분을 위한 문서입니다.)"
+msgstr ""
+
+#: ../../source/translation-pipeline.rst:16
+msgid "전체 그림"
+msgstr ""
+
+#: ../../source/translation-pipeline.rst:18
+msgid "GitHub와 Weblate 사이의 양방향 번역 파이프라인 다이어그램"
+msgstr ""
+
+#: ../../source/translation-pipeline.rst:22
+msgid ""
+"원문/문자열은 **GitHub → Weblate**\\(①)로, 번역 결과는 **Weblate → GitHub**\\(②)로 "
+"흐릅니다."
+msgstr ""
+
+#: ../../source/translation-pipeline.rst:24
+msgid "구성 요소는 다음과 같습니다."
+msgstr ""
+
+#: ../../source/translation-pipeline.rst:26
+msgid ""
+"**GitHub 저장소** : ``infra-cloud-kr/infra-cloud-kr.github.io`` — 원문(RST)과 "
+"번역(.po)의 원본"
+msgstr ""
+
+#: ../../source/translation-pipeline.rst:27
+msgid "**Weblate** : https://translate.openinfra.kr — 번역 작업 플랫폼"
+msgstr ""
+
+#: ../../source/translation-pipeline.rst:28
+msgid "**GitHub Actions** : 빌드·배포 및 번역 카탈로그 자동 생성"
+msgstr ""
+
+#: ../../source/translation-pipeline.rst:29
+msgid "**GitHub Pages** : 최종 문서 사이트 (한국어 ``/`` · 영어 ``/en/``)"
+msgstr ""
+
+#: ../../source/translation-pipeline.rst:33
+msgid "핵심 개념: Weblate는 ``.po``\\를 읽고 씁니다"
+msgstr ""
+
+#: ../../source/translation-pipeline.rst:35
+msgid ""
+"가장 먼저 이해해야 할 점은, **Weblate가 RST 원문을 직접 다루지 않는다**\\는 것입니다. Sphinx 문서는 "
+"gettext 방식으로 번역되며, 번역의 단위는 ``.po`` 파일입니다."
+msgstr ""
+
+#: ../../source/translation-pipeline.rst:48
+msgid "번역 **대상 문자열**\\은 원문 RST에서 추출되어 ``docs.po``\\의 ``msgid``\\가 됩니다."
+msgstr ""
+
+#: ../../source/translation-pipeline.rst:49
+msgid "번역 **결과**\\는 ``docs.po``\\의 ``msgstr``\\에 저장됩니다."
+msgstr ""
+
+#: ../../source/translation-pipeline.rst:50
+msgid ""
+"그래서 **원문이 바뀌면 ``.po``\\를 다시 생성**\\해야 새 문장이 Weblate에 나타납니다. 이 재생성을 자동화한 것이"
+" 아래 ①의 GitHub Actions입니다."
+msgstr ""
+
+#: ../../source/translation-pipeline.rst:55
+msgid ""
+"이 프로젝트는 ``conf.py``\\에서 ``gettext_compact = 'docs'`` 로 설정해 **모든 문서를 하나의 "
+"``docs.po`` 카탈로그로 합칩니다.** 덕분에 새 ``.rst`` 문서를 추가해도 그 문장들이 같은 카탈로그에 들어가, "
+"Weblate 컴포넌트 하나가 자동으로 포착합니다."
+msgstr ""
+
+#: ../../source/translation-pipeline.rst:61
+msgid "① GitHub → Weblate : 원문/문자열 반영"
+msgstr ""
+
+#: ../../source/translation-pipeline.rst:63
+msgid "저장소의 원문이 바뀌면 그 변화가 Weblate에 반영되는 흐름입니다. **두 단계**\\로 이루어집니다."
+msgstr ""
+
+#: ../../source/translation-pipeline.rst:66
+msgid "1단계 — 카탈로그 자동 재생성 (GitHub Actions)"
+msgstr ""
+
+#: ../../source/translation-pipeline.rst:68
+msgid ""
+"``source/**.rst`` 또는 ``conf.py`` 가 ``main``\\에 push되면 워크플로우 "
+"``.github/workflows/i18n-sync.yml`` 이 실행됩니다."
+msgstr ""
+
+#: ../../source/translation-pipeline.rst:77
+msgid ""
+"``sphinx-intl update`` 는 내부적으로 ``msgmerge``\\를 수행하여 **기존 번역은 유지**\\하면서 새 "
+"문장 추가 / 사라진 문장 정리 / 변경된 문장 표시(fuzzy)를 처리합니다."
+msgstr ""
+
+#: ../../source/translation-pipeline.rst:79
+msgid "커밋은 GitHub 기본 ``GITHUB_TOKEN``\\으로 이뤄지며, 별도 시크릿이 필요 없습니다."
+msgstr ""
+
+#: ../../source/translation-pipeline.rst:82
+msgid "2단계 — Weblate가 변경을 받아옴 (Webhook)"
+msgstr ""
+
+#: ../../source/translation-pipeline.rst:84
+msgid "GitHub 저장소의 **Webhook**\\이 push 때마다 Weblate의 알림 엔드포인트로 신호를 보냅니다."
+msgstr ""
+
+#: ../../source/translation-pipeline.rst:91
+msgid ""
+"이 엔드포인트는 **인증이 필요 없습니다.** Weblate는 payload의 저장소를 기존 컴포넌트와 대조한 뒤, **컴포넌트에 "
+"등록된 신뢰된 URL에서만** pull합니다(payload 내용을 받아오지 않음)."
+msgstr ""
+
+#: ../../source/translation-pipeline.rst:93
+msgid "저장소가 **공개(public)**\\라 Weblate는 익명으로 읽으므로 읽기용 자격증명도 불필요합니다."
+msgstr ""
+
+#: ../../source/translation-pipeline.rst:97
+msgid ""
+"Webhook이 없거나 즉시 반영이 안 될 때를 대비해, Weblate는 주기적으로도 저장소를 확인하도록 설정할 수 있습니다. 또한"
+" 관리자는 Weblate UI의 *Manage → Repository* 에서 수동으로 pull할 수 있습니다."
+msgstr ""
+
+#: ../../source/translation-pipeline.rst:103
+msgid "② Weblate → GitHub : 번역 결과 반영"
+msgstr ""
+
+#: ../../source/translation-pipeline.rst:105
+msgid "번역가가 Weblate에서 저장한 번역이 다시 저장소로 돌아가는 흐름입니다."
+msgstr ""
+
+#: ../../source/translation-pipeline.rst:121
+msgid ""
+"Weblate가 GitHub로 **push / PR 생성**\\을 하려면 **쓰기 권한이 있는 인증**\\이 필요합니다. 이 "
+"프로젝트는 서버 환경변수에 등록한 **개인 액세스 토큰(PAT)**\\을 사용합니다."
+msgstr ""
+
+#: ../../source/translation-pipeline.rst:123
+msgid "번역은 곧바로 한 건씩 push되지 않고, Weblate가 **묶어서(지연 커밋)** 처리하므로 하나의 PR이 점진적으로 갱신됩니다."
+msgstr ""
+
+#: ../../source/translation-pipeline.rst:125
+msgid "PR이 머지되기 전에는 사이트에 반영되지 않습니다(리뷰 단계)."
+msgstr ""
+
+#: ../../source/translation-pipeline.rst:129
+msgid "인증 정리 (방향별)"
+msgstr ""
+
+#: ../../source/translation-pipeline.rst:135
+msgid "동작"
+msgstr ""
+
+#: ../../source/translation-pipeline.rst:136
+msgid "인증"
+msgstr ""
+
+#: ../../source/translation-pipeline.rst:137
+msgid "비고"
+msgstr ""
+
+#: ../../source/translation-pipeline.rst:138
+msgid "GitHub → Weblate (Webhook 통보)"
+msgstr ""
+
+#: ../../source/translation-pipeline.rst:139
+#: ../../source/translation-pipeline.rst:142
+msgid "불필요"
+msgstr ""
+
+#: ../../source/translation-pipeline.rst:140
+msgid "공개 엔드포인트"
+msgstr ""
+
+#: ../../source/translation-pipeline.rst:141
+msgid "Weblate가 저장소 읽기(pull)"
+msgstr ""
+
+#: ../../source/translation-pipeline.rst:143
+msgid "저장소가 공개"
+msgstr ""
+
+#: ../../source/translation-pipeline.rst:144
+msgid "Weblate → GitHub (push / PR 생성)"
+msgstr ""
+
+#: ../../source/translation-pipeline.rst:145
+msgid "**PAT 필요**"
+msgstr ""
+
+#: ../../source/translation-pipeline.rst:146
+msgid "서버 환경변수에 설정"
+msgstr ""
+
+#: ../../source/translation-pipeline.rst:147
+msgid "GitHub Actions의 카탈로그 커밋"
+msgstr ""
+
+#: ../../source/translation-pipeline.rst:148
+msgid "기본 ``GITHUB_TOKEN``"
+msgstr ""
+
+#: ../../source/translation-pipeline.rst:149
+msgid "별도 시크릿 없음"
+msgstr ""
+
+#: ../../source/translation-pipeline.rst:153
+msgid "컴포넌트 설정 요약"
+msgstr ""
+
+#: ../../source/translation-pipeline.rst:155
+msgid "Weblate 컴포넌트(``infra-cloud-kr / docs``)의 핵심 설정입니다."
+msgstr ""
+
+#: ../../source/translation-pipeline.rst:161
+msgid "항목"
+msgstr ""
+
+#: ../../source/translation-pipeline.rst:162
+msgid "값"
+msgstr ""
+
+#: ../../source/translation-pipeline.rst:163
+msgid "원문 언어"
+msgstr ""
+
+#: ../../source/translation-pipeline.rst:164
+msgid "한국어 (``ko``)"
+msgstr ""
+
+#: ../../source/translation-pipeline.rst:165
+msgid "번역 언어"
+msgstr ""
+
+#: ../../source/translation-pipeline.rst:166
+msgid "영어 (``en``)"
+msgstr ""
+
+#: ../../source/translation-pipeline.rst:167
+msgid "파일 형식"
+msgstr ""
+
+#: ../../source/translation-pipeline.rst:168
+msgid "gettext PO (bilingual)"
+msgstr ""
+
+#: ../../source/translation-pipeline.rst:169
+msgid "File mask"
+msgstr ""
+
+#: ../../source/translation-pipeline.rst:170
+msgid "``source/locales/*/LC_MESSAGES/docs.po``"
+msgstr ""
+
+#: ../../source/translation-pipeline.rst:171
+msgid "버전 관리"
+msgstr ""
+
+#: ../../source/translation-pipeline.rst:172
+msgid "``github`` (PR 방식), merge style: rebase"
+msgstr ""
+
+#: ../../source/translation-pipeline.rst:173
+msgid "Push 브랜치"
+msgstr ""
+
+#: ../../source/translation-pipeline.rst:174
+msgid "``weblate-translations``"
+msgstr ""
+
+#: ../../source/translation-pipeline.rst:178
+msgid "메인테이너 메모 (문제 해결)"
+msgstr ""
+
+#: ../../source/translation-pipeline.rst:182
+msgid ""
+"**원문을 바꿨는데 Weblate에 안 보일 때** : ①의 카탈로그 재생성(Action)이 돌아 ``docs.po``\\가 "
+"갱신됐는지, Webhook이 전달됐는지 확인합니다. 필요하면 Weblate UI에서 수동 pull을 합니다."
+msgstr ""
+
+#: ../../source/translation-pipeline.rst:185
+msgid ""
+"**filemask 등을 바꾼 뒤 재스캔이 안 될 때** : Weblate가 \"already parsed, skipping\" "
+"으로 건너뛸 수 있습니다. 서버에서 ``weblate loadpo --force --foreground infra-cloud-"
+"kr/docs`` 로 강제 재로딩합니다."
+msgstr ""
+
+#: ../../source/translation-pipeline.rst:188
+msgid ""
+"**rebase 충돌** : Weblate 로컬에 남은 커밋과 원격이 어긋나면 *Repository* 의 ``reset`` 으로 "
+"원격 상태에 맞춥니다(로컬의 미반영 변경은 사라지므로 주의)."
+msgstr ""
+
+#: ../../source/translation-pipeline.rst:193
+msgid "함께 보기"
+msgstr ""
+
+#: ../../source/translation-pipeline.rst:195
+msgid ":ref:`translation-guide` — 실제 번역 방법(멘티용)"
+msgstr ""
+
+#: ../../source/translation-pipeline.rst:196
+msgid ""
+"`Weblate 연속 현지화 문서 "
+"<https://docs.weblate.org/en/latest/admin/continuous.html>`_"
+msgstr ""
+
+#: ../../source/translation-pipeline.rst:197
+msgid ""
+"`Sphinx 국제화 문서 <https://www.sphinx-"
+"doc.org/en/master/usage/advanced/intl.html>`_"
 msgstr ""
 
