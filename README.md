@@ -106,20 +106,22 @@ make clean
 
 번역되지 않은 문장은 원문(한국어)으로 표시됩니다.
 
-### 원문 수정 시 번역 파일 동기화
+### 원문 수정 시 번역 파일 동기화 (자동)
 
-`source/*.rst` 원문을 수정한 뒤에는 번역 대상 문자열(`.po`)을 갱신해야 합니다.
+**손으로 할 필요 없습니다.** `source/*.rst`(또는 `conf.py`) 변경이 `main`에 머지되면,
+GitHub Actions 워크플로우 [`i18n-sync.yml`](.github/workflows/i18n-sync.yml)이 자동으로:
 
-```bash
-# .pot 추출 + .po 갱신 (en)
-make update-po
+1. gettext 카탈로그를 다시 추출하고 (`make update-po` 과 동일)
+2. 변경된 `source/locales/**/docs.po` 를 커밋합니다.
 
-# 변경된 .po 파일을 커밋
-git add source/locales
-git commit -m "i18n: update translation catalogs"
-```
+이후 GitHub 웹훅을 통해 Weblate가 새/변경된 문장을 자동으로 인식합니다.
+전체 동작 원리는 빌드된 문서의 *번역 파이프라인 동작 원리* 페이지(`source/translation-pipeline.rst`)를 참고하세요.
 
-이후 Weblate가 새로 추가된 문장을 자동으로 인식합니다.
+> 로컬에서 직접 카탈로그를 갱신해 확인하고 싶을 때만 수동으로 실행하면 됩니다:
+>
+> ```bash
+> make update-po   # .pot 추출 + docs.po 갱신 (기존 번역 보존)
+> ```
 
 ### 영어 빌드 미리보기
 
