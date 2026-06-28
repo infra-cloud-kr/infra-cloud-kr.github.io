@@ -88,6 +88,46 @@ make clean
 
 커스텀 스타일은 `source/_static/custom.css` 파일에서 관리합니다.
 
+## 번역 (i18n)
+
+이 문서는 한국어가 원문이며, Weblate([weblate.printf.kr](https://weblate.printf.kr))를 통해 영어로 번역됩니다.
+
+- 원문 언어: 한국어(`ko`)
+- 번역 언어: 영어(`en`)
+- 번역 파일: `source/locales/<lang>/LC_MESSAGES/*.po` (gettext 형식, Weblate가 읽고 씁니다)
+
+### 번역 워크플로우
+
+1. 번역가는 [weblate.printf.kr](https://weblate.printf.kr)에서 문장을 번역합니다.
+2. Weblate가 번역된 `.po` 파일을 Pull Request로 이 저장소에 제출합니다.
+3. PR이 `main`에 머지되면 GitHub Actions가 한국어/영어 사이트를 함께 빌드·배포합니다.
+   - 한국어: `https://infra-cloud-kr.github.io/`
+   - 영어: `https://infra-cloud-kr.github.io/en/`
+
+번역되지 않은 문장은 원문(한국어)으로 표시됩니다.
+
+### 원문 수정 시 번역 파일 동기화
+
+`source/*.rst` 원문을 수정한 뒤에는 번역 대상 문자열(`.po`)을 갱신해야 합니다.
+
+```bash
+# .pot 추출 + .po 갱신 (en)
+make update-po
+
+# 변경된 .po 파일을 커밋
+git add source/locales
+git commit -m "i18n: update translation catalogs"
+```
+
+이후 Weblate가 새로 추가된 문장을 자동으로 인식합니다.
+
+### 영어 빌드 미리보기
+
+```bash
+make html-en
+# _build/html/en/index.html 을 브라우저에서 확인
+```
+
 ## 라이선스
 
 Apache License 2.0 — 자세한 내용은 [LICENSE](LICENSE) 파일을 참고하세요.

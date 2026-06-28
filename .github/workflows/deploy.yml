@@ -30,8 +30,11 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Build HTML with Sphinx
+      - name: Build HTML with Sphinx (Korean)
         run: sphinx-build -W -b html source _build/html
+
+      - name: Build HTML with Sphinx (English)
+        run: sphinx-build -W -b html -D language=en source _build/html/en
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

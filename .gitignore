@@ -1,6 +1,9 @@
 # Sphinx build output
 _build/
 
+# Compiled translation catalogs (generated from .po at build time)
+*.mo
+
 # Python
 __pycache__/
 *.py[cod]

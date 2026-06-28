@@ -17,6 +17,12 @@ language = 'ko'
 
 exclude_patterns = []
 
+# -- Internationalization (i18n) ---------------------------------------------
+# 번역 파일(.po) 위치. Weblate가 이 디렉터리의 .po 파일을 읽고 씁니다.
+locale_dirs = ['locales/']
+# 문서별로 .pot/.po 파일을 분리해 생성합니다 (Weblate 컴포넌트 매핑에 유리).
+gettext_compact = False
+
 # -- Options for HTML output -------------------------------------------------
 
 html_theme = 'furo'
