@@ -35,7 +35,7 @@ msgstr ""
 
 #: ../../source/index.rst:20
 msgid "우리의 미션"
-msgstr "Our Mission"
+msgstr ""
 
 #: ../../source/index.rst:22
 msgid ""
