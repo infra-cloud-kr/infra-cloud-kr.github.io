@@ -10,6 +10,12 @@ OpenInfra(OpenStack)와 Cloud Native(Kubernetes/CNCF) 생태계를 잇는 한국
    :local:
    :depth: 2
 
+.. toctree::
+   :hidden:
+
+   translation-guide
+   translation-pipeline
+
 우리의 미션
 ===========
 

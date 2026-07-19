@@ -88,6 +88,48 @@ make clean
 
 커스텀 스타일은 `source/_static/custom.css` 파일에서 관리합니다.
 
+## 번역 (i18n)
+
+이 문서는 한국어가 원문이며, Weblate([translate.openinfra.kr](https://translate.openinfra.kr))를 통해 영어로 번역됩니다.
+
+- 원문 언어: 한국어(`ko`)
+- 번역 언어: 영어(`en`)
+- 번역 파일: `source/locales/<lang>/LC_MESSAGES/*.po` (gettext 형식, Weblate가 읽고 씁니다)
+
+### 번역 워크플로우
+
+1. 번역가는 [translate.openinfra.kr](https://translate.openinfra.kr)에서 문장을 번역합니다.
+2. Weblate가 번역된 `.po` 파일을 Pull Request로 이 저장소에 제출합니다.
+3. PR이 `main`에 머지되면 GitHub Actions가 한국어/영어 사이트를 함께 빌드·배포합니다.
+   - 한국어: `https://infra-cloud-kr.github.io/`
+   - 영어: `https://infra-cloud-kr.github.io/en/`
+
+번역되지 않은 문장은 원문(한국어)으로 표시됩니다.
+
+### 원문 수정 시 번역 파일 동기화 (자동)
+
+**손으로 할 필요 없습니다.** `source/*.rst`(또는 `conf.py`) 변경이 `main`에 머지되면,
+GitHub Actions 워크플로우 [`i18n-sync.yml`](.github/workflows/i18n-sync.yml)이 자동으로:
+
+1. gettext 카탈로그를 다시 추출하고 (`make update-po` 과 동일)
+2. 변경된 `source/locales/**/docs.po` 를 커밋합니다.
+
+이후 GitHub 웹훅을 통해 Weblate가 새/변경된 문장을 자동으로 인식합니다.
+전체 동작 원리는 빌드된 문서의 *번역 파이프라인 동작 원리* 페이지(`source/translation-pipeline.rst`)를 참고하세요.
+
+> 로컬에서 직접 카탈로그를 갱신해 확인하고 싶을 때만 수동으로 실행하면 됩니다:
+>
+> ```bash
+> make update-po   # .pot 추출 + docs.po 갱신 (기존 번역 보존)
+> ```
+
+### 영어 빌드 미리보기
+
+```bash
+make html-en
+# _build/html/en/index.html 을 브라우저에서 확인
+```
+
 ## 라이선스
 
 Apache License 2.0 — 자세한 내용은 [LICENSE](LICENSE) 파일을 참고하세요.
